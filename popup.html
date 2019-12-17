@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Auto Login</title>
+    <link rel="stylesheet" href="static/css/bootstrap.min.css" />
+    <link rel="stylesheet" type="text/css" href="static/css/main.css" />
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+</head>
+
+<body>
+    <div class="">
+        <header>
+            <h1>Auto Login</h1>
+            <img class="logo" src="logo.png" alt="AutoRefresh logo" />
+        </header>
+        <div id="time">
+            <h2>User Name</h2>
+            <div class="row">
+                <div class="col">
+                    <h3>Element Id</h3>
+                    <section>
+                        <input type="text" id="username-id" />
+                    </section>
+                </div>
+                <div class="col">
+                    <h3>User Name</h3>
+                    <section>
+                        <input type="text" id="username-value" />
+                    </section>
+                </div>
+            </div>
+            <h2>Password</h2>
+            <div class="row">
+                <div class="col">
+                    <h3>Element Id</h3>
+                    <section>
+                        <input type="text" id="password-id" />
+                    </section>
+                </div>
+                <div class="col">
+                    <h3>Password</h3>
+                    <section>
+                        <input type="password" id="password-value" />
+                    </section>
+                </div>
+            </div>
+            <h2>Login Button Element Id</h2>
+            <section>
+                <input type="text" id="login-button-id" />
+            </section>
+            <h2>Re-Login Interval</h2>
+            <div class="row">
+                <div class="col">
+                    <section>
+                        <input type="number" value="15" min="0" id="minutes" step="1" pattern="d+" />
+                        <span class="label">Minutes</span>
+                    </section>
+                </div>
+            </div>
+            <!-- <section>
+                <input type="number" value="15" min="0" id="seconds" step="1" pattern="d+" />
+                <span class="label">Seconds</span>
+            </section> -->
+        </div>
+        <section class="btns">
+            <button id="start">Start</button>
+            <button id="stop">Stop</button>
+            <span class="label"></span>
+        </section>
+    </div>
+    <script type="text/javascript" src="static/js/jquery.min.js"></script>
+    <script type="text/javascript" src="static/js/popup.js"></script>
+</body>
+
+</html>
