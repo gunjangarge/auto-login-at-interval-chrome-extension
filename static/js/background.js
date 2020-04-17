@@ -1,7 +1,12 @@
 var stringifiedTimer = localStorage.getItem("_timers");
+var rememberMeSettings =
+  localStorage.getItem("rememberMe") === "true"
+    ? localStorage.getItem("rememberMe")
+    : false;
 var _timers = stringifiedTimer ? JSON.parse(stringifiedTimer) : {};
 (function() {
   var timers = {
+    rememberMe: rememberMeSettings,
     get: function(id) {
       return _timers[id] || false;
     },
@@ -29,6 +34,7 @@ var _timers = stringifiedTimer ? JSON.parse(stringifiedTimer) : {};
         passwordDivId: passwordDivId,
         passwordValue: passwordValue,
         loginButtonDivId: loginButtonDivId,
+        rememberMe: rememberMeSettings,
         timer: timers.start(
           id,
           interval,
@@ -39,6 +45,7 @@ var _timers = stringifiedTimer ? JSON.parse(stringifiedTimer) : {};
           loginButtonDivId
         )
       };
+      console.log(_timers);
     },
     remove: function(id) {
       if (_timers[id]) {
@@ -47,6 +54,7 @@ var _timers = stringifiedTimer ? JSON.parse(stringifiedTimer) : {};
         delete _timers[id];
       }
       localStorage.setItem("_timers", JSON.stringify(_timers));
+
     },
     start: function(
       id,
@@ -59,7 +67,6 @@ var _timers = stringifiedTimer ? JSON.parse(stringifiedTimer) : {};
     ) {
       return setInterval(function() {
         if (_timers[id] && new Date().getTime() >= _timers[id].nextRefresh) {
-
           var config = {
             usernameDivId: usernameDivId,
             usernameValue: usernameValue,

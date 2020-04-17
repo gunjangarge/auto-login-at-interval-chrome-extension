@@ -138,3 +138,30 @@ button:active {
 #stop {
     display: none
 }
+
+#time input[type='checkbox'] {
+    width: 25px;
+    height: 25px;
+    -webkit-appearance: none;
+    padding: 0;
+    margin-bottom: 0;
+    line-height: 25px;
+    float: left;
+    cursor: pointer;
+  }
+  #time input[type='checkbox']:checked {
+    background-image: url('../../check-solid.png');
+    background-position: center;
+    background-size: 15px;
+    background-repeat: no-repeat;
+  }
+  
+  #time section span.cblabel {
+    display: inline-block;
+    height: 25px;
+    line-height: 25px;
+    padding-left: 10px;
+    color: #607D8B;
+    font-size: 14px;
+    text-align: center;
+  }
